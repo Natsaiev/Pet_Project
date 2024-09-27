@@ -29,7 +29,7 @@ export const Category = () => {
   return (
     <Layout>
       <Box>
-        <Typography>{shownProducts?.category?.title}</Typography> {/* Исправлено на shownProducts */}
+        <Typography sx={{ fontWeight: "700", paddingLeft: "40px", fontSize: "40px" }}>{shownProducts?.category?.title}</Typography> {/* Исправлено на shownProducts */}
         {/* <Filter/> */}
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: "70px", padding: "40px" }}>
           {shownProducts?.data?.length > 0 ? (

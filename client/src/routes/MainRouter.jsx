@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Categories } from "../pages/Categories";
 import { Category } from "../pages/Category";
@@ -10,6 +10,7 @@ import { getCategories } from "../store/actionCreators";
 import { getProducts } from "../store/actionCreators";
 import { Sales } from "../pages/Sales";
 import { Cart } from "../pages/Cart";
+import { Error } from "../pages/Error";
 
 export const MainRouter = () => {
   const dispatch = useDispatch();
@@ -28,6 +29,8 @@ export const MainRouter = () => {
       <Route path="/products/:productId" element={<Product />} />
       <Route path="/sales" element={<Sales />}/>
       <Route path="/cart" element={<Cart />}/>
+      <Route path="/404" element={<Error />} />
+            <Route path="*" element={<Navigate to="/404" />} />
     </Routes>
   );
 };

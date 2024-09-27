@@ -8,7 +8,7 @@ export const CategoryBlock = ({ categories }) => {
   return (
     <div>
       <Stack direction="row" alignItems="center" mb={5} mr={4} >
-        <Typography ml={4} variant="h2">
+        <Typography ml={4} variant="h2" sx={{ fontWeight: 700 }}>
           Categories
         </Typography>
         <Box sx={{ flexGrow: 1, ml: 4 }}>

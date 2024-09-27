@@ -52,8 +52,7 @@ export const FilterComponent = ({ sales = false }) => {
     const filterObject = useSelector(state => state.filter);
 
     return (
-        <Stack direction="row" alignItems="center" gap={2} mb={2}>
-            {/* Price */}
+        <Stack direction="row" alignItems="center" gap={2} mb={2} ml={5}>
             <Typography sx={{ minWidth: 50 }}>Price</Typography>
             <FilterInput 
                 type="number" 
@@ -69,7 +68,7 @@ export const FilterComponent = ({ sales = false }) => {
                 onChange={(e) => dispatch(changePriceTo(e.target.value))} 
             />
 
-            {/* Discounted items */}
+            
             {!sales && (
                 <>
                     <Typography sx={{ minWidth: 150 }}>Discounted items</Typography>
@@ -81,13 +80,8 @@ export const FilterComponent = ({ sales = false }) => {
                 </>
             )}
 
-            {/* Sorted */}
             <Typography sx={{ minWidth: 50 }}>Sorted</Typography>
-            <FilterSelect 
-                options={filterOptions} 
-                defaultValue={filterOptions[0]} 
-                handleSelect={(selected) => dispatch(changeSorted(selected))} 
-            />
+            <FilterSelect options={filterOptions} defaultValue={filterOptions[0]} handleSelect={(selected) => dispatch(changeSorted(selected))} />
         </Stack>
     );
 };

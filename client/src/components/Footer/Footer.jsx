@@ -4,7 +4,7 @@ import { FooterCard } from "../Footer/FooterCard";
 export const Footer = () => {
   return (
     <Box mr={4} ml={4}>
-      <Typography mb={10} variant="h2">
+      <Typography mb={10} variant="h2" sx={{ fontWeight: 700 }}>
         Contact
       </Typography>
       <Stack gap={4}>
