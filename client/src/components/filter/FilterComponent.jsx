@@ -20,6 +20,7 @@ export const FilterInput = styled('input')({
     padding: "8px 12px",
     borderRadius: 6,
     fontSize: 14, 
+    color: "black",
     "&::placeholder": {
         color: "#282828",
     }

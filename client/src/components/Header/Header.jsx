@@ -1,7 +1,15 @@
 import { Toolbar, Stack, Badge, Box } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux"; // Импортируем useSelector
 import styles from "./Header.module.css";
+
 export const Header = () => {
+  // Получаем товары в корзине из Redux
+  const productsInCart = useSelector((state) => state.cart.productsInCart);
+
+  // Считаем общее количество товаров в корзине
+  const totalItems = productsInCart.reduce((acc, product) => acc + product.quantity, 0);
+
   return (
     <Box>
       <Toolbar>
@@ -57,7 +65,7 @@ export const Header = () => {
 
           <NavLink to="/cart">
             <Badge
-              badgeContent={1}
+              badgeContent={totalItems} // Устанавливаем значение бейджа
               color="primary"
               overlap="circular"
               anchorOrigin={{
